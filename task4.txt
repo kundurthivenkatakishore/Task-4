@@ -1,4 +1,5 @@
-How to compare two JSON have the same properties without order?
+1)How to compare two JSON have the same properties without order?
+
 var obj1 = { name: "Person 1", age:5 };
 var obj2 = { age:5, name: "Person 1" };
 
@@ -22,3 +23,1220 @@ code:
     flag=false;
     }
     console.log("Objects are equal");
+
+2)Use the rest countries API url -> https://restcountries.eu/rest/v2/all and display all the country flags in console
+
+code:
+        var request=new XMLHttpRequest();
+        request.open("GET","https://restcountries.com/v2/all",true)
+        request.onload=function(){
+
+        var data=JSON.parse(this.response);
+        console.log(data);
+            for(i=0;i<data.length;i++)
+            {
+                var a=data[i].flags.png
+                console.log('%c','font-size:400px;background:url('+ a +') no-repeat')
+            }
+        }
+        request.send();
+     
+3)Use the same rest countries and print all countries name, region, sub region and population
+
+code:
+        var request=new XMLHttpRequest();
+        request.open("GET","https://restcountries.com/v2/all",true)
+        request.onload=function(){
+        var data=JSON.parse(this.response);
+        console.log(data);
+        for(i=0;i<data.length;i++)
+        {
+            console.log(data[i].name)
+            console.log(data[i].region)
+            console.log(data[i].subregion)
+            console.log(data[i].population)
+        }
+        }
+        request.send();
+output:
+index.html:6 The value "<device-width>" for key "width" is invalid, and has been ignored.
+merge.js:10 
+merge.js:11 Afghanistan
+merge.js:12 Asia
+​ Southern Asia
+​ 40218234
+​ 
+​ Åland Islands
+​ Europe
+​ Northern Europe
+​ 28875
+​ 
+​ Albania
+​ Europe
+​ Southern Europe
+​ 2837743
+​ 
+​ Algeria
+​ Africa
+​ Northern Africa
+​ 43851043
+​ 
+​ American Samoa
+​ Oceania
+​ Polynesia
+​ 55197
+​ 
+​ Andorra
+​ Europe
+​ Southern Europe
+​ 77265
+​ 
+​ Angola
+​ Africa
+​ Middle Africa
+​ 32866268
+​ 
+​ Anguilla
+​ Americas
+​ Caribbean
+​ 13452
+​ 
+​ Antarctica
+​ Polar
+​ Antarctica
+​ 1000
+​ 
+​ Antigua and Barbuda
+​ Americas
+​ Caribbean
+​ 97928
+​ 
+​ Argentina
+​ Americas
+​ South America
+​ 45376763
+​ 
+​ Armenia
+​ Asia
+​ Western Asia
+​ 2963234
+​ 
+​ Aruba
+​ Americas
+​ Caribbean
+​ 106766
+​ 
+​ Australia
+​ Oceania
+​ Australia and New Zealand
+​ 25687041
+​ 
+​ Austria
+​ Europe
+​ Central Europe
+​ 8917205
+​ 
+​ Azerbaijan
+​ Asia
+​ Western Asia
+​ 10110116
+​ 
+​ Bahamas
+​ Americas
+​ Caribbean
+​ 393248
+​ 
+​ Bahrain
+​ Asia
+​ Western Asia
+​ 1701583
+​ 
+​ Bangladesh
+​ Asia
+​ Southern Asia
+​ 164689383
+​ 
+​ Barbados
+​ Americas
+​ Caribbean
+​ 287371
+​ 
+​ Belarus
+​ Europe
+​ Eastern Europe
+​ 9398861
+​ 
+​ Belgium
+​ Europe
+​ Western Europe
+​ 11555997
+​ 
+​ Belize
+​ Americas
+​ Central America
+​ 397621
+​ 
+​ Benin
+​ Africa
+​ Western Africa
+​ 12123198
+​ 
+​ Bermuda
+​ Americas
+​ Northern America
+​ 63903
+​ 
+​ Bhutan
+​ Asia
+​ Southern Asia
+​ 771612
+​ 
+​ Bolivia (Plurinational State of)
+​ Americas
+​ South America
+​ 11673029
+​ 
+​ Bonaire, Sint Eustatius and Saba
+​ Americas
+​ Caribbean
+​ 17408
+​ 
+​ Bosnia and Herzegovina
+​ Europe
+​ Southern Europe
+​ 3280815
+​ 
+​ Botswana
+​ Africa
+​ Southern Africa
+​ 2351625
+​ 
+​ Bouvet Island
+​ Antarctic Ocean
+​ South Antarctic Ocean
+​ 0
+​ 
+​ Brazil
+​ Americas
+​ South America
+​ 212559409
+​ 
+​ British Indian Ocean Territory
+​ Africa
+​ Eastern Africa
+​ 3000
+​ 
+​ United States Minor Outlying Islands
+​ Americas
+​ Northern America
+​ 300
+​ 
+​ Virgin Islands (British)
+​ Americas
+​ Caribbean
+​ 30237
+​ 
+​ Virgin Islands (U.S.)
+​ Americas
+​ Caribbean
+​ 106290
+​ 
+​ Brunei Darussalam
+​ Asia
+​ South-Eastern Asia
+​ 437483
+​ 
+​ Bulgaria
+​ Europe
+​ Eastern Europe
+​ 6927288
+​ 
+​ Burkina Faso
+​ Africa
+​ Western Africa
+​ 20903278
+​ 
+​ Burundi
+​ Africa
+​ Eastern Africa
+​ 11890781
+​ 
+​ Cambodia
+​ Asia
+​ South-Eastern Asia
+​ 16718971
+​ 
+​ Cameroon
+​ Africa
+​ Middle Africa
+​ 26545864
+​ 
+​ Canada
+​ Americas
+​ Northern America
+​ 38005238
+​ 
+​ Cabo Verde
+​ Africa
+​ Western Africa
+​ 555988
+​ 
+​ Cayman Islands
+​ Americas
+​ Caribbean
+​ 65720
+​ 
+​ Central African Republic
+​ Africa
+​ Middle Africa
+​ 4829764
+​ 
+​ Chad
+​ Africa
+​ Middle Africa
+​ 16425859
+​ 
+​ Chile
+​ Americas
+​ South America
+​ 19116209
+​ 
+​ China
+​ Asia
+​ Eastern Asia
+​ 1402112000
+​ 
+​ Christmas Island
+​ Oceania
+​ Australia and New Zealand
+​ 2072
+​ 
+​ Cocos (Keeling) Islands
+​ Oceania
+​ Australia and New Zealand
+​ 550
+​ 
+​ Colombia
+​ Americas
+​ South America
+​ 50882884
+​ 
+​ Comoros
+​ Africa
+​ Eastern Africa
+​ 869595
+​ 
+​ Congo
+​ Africa
+​ Middle Africa
+​ 5518092
+​ 
+​ Congo (Democratic Republic of the)
+​ Africa
+​ Middle Africa
+​ 89561404
+​ 
+​ Cook Islands
+​ Oceania
+​ Polynesia
+​ 18100
+​ 
+​ Costa Rica
+​ Americas
+​ Central America
+​ 5094114
+​ 
+​ Croatia
+​ Europe
+​ Southern Europe
+​ 4047200
+​ 
+​ Cuba
+​ Americas
+​ Caribbean
+​ 11326616
+​ 
+​ Curaçao
+​ Americas
+​ Caribbean
+​ 155014
+​ 
+​ Cyprus
+​ Europe
+​ Southern Europe
+​ 1207361
+​ 
+​ Czech Republic
+​ Europe
+​ Central Europe
+​ 10698896
+​ 
+​ Denmark
+​ Europe
+​ Northern Europe
+​ 5831404
+​ 
+​ Djibouti
+​ Africa
+​ Eastern Africa
+​ 988002
+​ 
+​ Dominica
+​ Americas
+​ Caribbean
+​ 71991
+​ 
+​ Dominican Republic
+​ Americas
+​ Caribbean
+​ 10847904
+​ 
+​ Ecuador
+​ Americas
+​ South America
+​ 17643060
+​ 
+​ Egypt
+​ Africa
+​ Northern Africa
+​ 102334403
+​ 
+​ El Salvador
+​ Americas
+​ Central America
+​ 6486201
+​ 
+​ Equatorial Guinea
+​ Africa
+​ Middle Africa
+​ 1402985
+​ 
+​ Eritrea
+​ Africa
+​ Eastern Africa
+​ 5352000
+​ 
+​ Estonia
+​ Europe
+​ Northern Europe
+​ 1331057
+​ 
+​ Ethiopia
+​ Africa
+​ Eastern Africa
+​ 114963583
+​ 
+​ Falkland Islands (Malvinas)
+​ Americas
+​ South America
+​ 2563
+​ 
+​ Faroe Islands
+​ Europe
+​ Northern Europe
+​ 48865
+​ 
+​ Fiji
+​ Oceania
+​ Melanesia
+​ 896444
+​ 
+​ Finland
+​ Europe
+​ Northern Europe
+​ 5530719
+​ 
+​ France
+​ Europe
+​ Western Europe
+​ 67391582
+​ 
+​ French Guiana
+​ Americas
+​ South America
+​ 254541
+​ 
+​ French Polynesia
+​ Oceania
+​ Polynesia
+​ 280904
+​ 
+​ French Southern Territories
+​ Africa
+​ Southern Africa
+​ 140
+​ 
+​ Gabon
+​ Africa
+​ Middle Africa
+​ 2225728
+​ 
+​ Gambia
+​ Africa
+​ Western Africa
+​ 2416664
+​ 
+​ Georgia
+​ Asia
+​ Western Asia
+​ 3714000
+​ 
+​ Germany
+​ Europe
+​ Central Europe
+​ 83240525
+​ 
+​ Ghana
+​ Africa
+​ Western Africa
+​ 31072945
+​ 
+​ Gibraltar
+​ Europe
+​ Southern Europe
+​ 33691
+​ 
+​ Greece
+​ Europe
+​ Southern Europe
+​ 10715549
+​ 
+​ Greenland
+​ Americas
+​ Northern America
+​ 56367
+​ 
+​ Grenada
+​ Americas
+​ Caribbean
+​ 112519
+​ 
+​ Guadeloupe
+​ Americas
+​ Caribbean
+​ 400132
+​ 
+​ Guam
+​ Oceania
+​ Micronesia
+​ 168783
+​ 
+​ Guatemala
+​ Americas
+​ Central America
+​ 16858333
+​ 
+​ Guernsey
+​ Europe
+​ Northern Europe
+​ 62999
+​ 
+​ Guinea
+​ Africa
+​ Western Africa
+​ 13132792
+​ 
+​ Guinea-Bissau
+​ Africa
+​ Western Africa
+​ 1967998
+​ 
+​ Guyana
+​ Americas
+​ South America
+​ 786559
+​ 
+​ Haiti
+​ Americas
+​ Caribbean
+​ 11402533
+​ 
+​ Heard Island and McDonald Islands
+​ Antarctic
+​ Antarctic
+​ 0
+​ 
+​ Vatican City
+​ Europe
+​ Southern Europe
+​ 451
+​ 
+​ Honduras
+​ Americas
+​ Central America
+​ 9904608
+​ 
+​ Hungary
+​ Europe
+​ Central Europe
+​ 9749763
+​ 
+​ Hong Kong
+​ Asia
+​ Eastern Asia
+​ 7481800
+​ 
+​ Iceland
+​ Europe
+​ Northern Europe
+​ 366425
+​ 
+​ India
+​ Asia
+​ Southern Asia
+​ 1380004385
+​ 
+​ Indonesia
+​ Asia
+​ South-Eastern Asia
+​ 273523621
+​ 
+​ Ivory Coast
+​ Africa
+​ Western Africa
+​ 26378275
+​ 
+​ Iran (Islamic Republic of)
+​ Asia
+​ Southern Asia
+​ 83992953
+​ 
+​ Iraq
+​ Asia
+​ Western Asia
+​ 40222503
+​ 
+​ Ireland
+​ Europe
+​ Northern Europe
+​ 4994724
+​ 
+​ Isle of Man
+​ Europe
+​ Northern Europe
+​ 85032
+​ 
+​ Israel
+​ Asia
+​ Western Asia
+​ 9216900
+​ 
+​ Italy
+​ Europe
+​ Southern Europe
+​ 59554023
+​ 
+​ Jamaica
+​ Americas
+​ Caribbean
+​ 2961161
+​ 
+​ Japan
+​ Asia
+​ Eastern Asia
+​ 125836021
+​ 
+​ Jersey
+​ Europe
+​ Northern Europe
+​ 100800
+​ 
+​ Jordan
+​ Asia
+​ Western Asia
+​ 10203140
+​ 
+​ Kazakhstan
+​ Asia
+​ Central Asia
+​ 18754440
+​ 
+​ Kenya
+​ Africa
+​ Eastern Africa
+​ 53771300
+​ 
+​ Kiribati
+​ Oceania
+​ Micronesia
+​ 119446
+​ 
+​ Kuwait
+merge.js:12 Asia
+merge.js:13 Western Asia
+merge.js:14 4270563
+merge.js:10 
+merge.js:11 Kyrgyzstan
+merge.js:12 Asia
+merge.js:13 Central Asia
+merge.js:14 6591600
+merge.js:10 
+merge.js:11 Lao People's Democratic Republic
+merge.js:12 Asia
+merge.js:13 South-Eastern Asia
+merge.js:14 7275556
+merge.js:10 
+merge.js:11 Latvia
+merge.js:12 Europe
+merge.js:13 Northern Europe
+merge.js:14 1901548
+merge.js:10 
+merge.js:11 Lebanon
+merge.js:12 Asia
+merge.js:13 Western Asia
+merge.js:14 6825442
+merge.js:10 
+merge.js:11 Lesotho
+merge.js:12 Africa
+merge.js:13 Southern Africa
+merge.js:14 2142252
+merge.js:10 
+merge.js:11 Liberia
+merge.js:12 Africa
+merge.js:13 Western Africa
+merge.js:14 5057677
+merge.js:10 
+merge.js:11 Libya
+merge.js:12 Africa
+merge.js:13 Northern Africa
+merge.js:14 6871287
+merge.js:10 
+merge.js:11 Liechtenstein
+merge.js:12 Europe
+merge.js:13 Central Europe
+merge.js:14 38137
+merge.js:10 
+merge.js:11 Lithuania
+merge.js:12 Europe
+merge.js:13 Northern Europe
+merge.js:14 2794700
+merge.js:10 
+merge.js:11 Luxembourg
+merge.js:12 Europe
+merge.js:13 Western Europe
+merge.js:14 632275
+merge.js:10 
+merge.js:11 Macao
+merge.js:12 Asia
+merge.js:13 Eastern Asia
+merge.js:14 649342
+merge.js:10 
+merge.js:11 North Macedonia
+merge.js:12 Europe
+merge.js:13 Southern Europe
+merge.js:14 2083380
+merge.js:10 
+merge.js:11 Madagascar
+merge.js:12 Africa
+merge.js:13 Eastern Africa
+merge.js:14 27691019
+merge.js:10 
+merge.js:11 Malawi
+​ Africa
+​ Eastern Africa
+​ 19129955
+​ 
+​ Malaysia
+​ Asia
+​ South-Eastern Asia
+​ 32365998
+​ 
+​ Maldives
+​ Asia
+​ Southern Asia
+​ 540542
+​ 
+​ Mali
+​ Africa
+​ Western Africa
+​ 20250834
+​ 
+​ Malta
+​ Europe
+​ Southern Europe
+​ 525285
+​ 
+​ Marshall Islands
+​ Oceania
+​ Micronesia
+​ 59194
+​ 
+​ Martinique
+​ Americas
+​ Caribbean
+​ 378243
+​ 
+​ Mauritania
+​ Africa
+​ Western Africa
+​ 4649660
+​ 
+​ Mauritius
+​ Africa
+​ Eastern Africa
+​ 1265740
+​ 
+​ Mayotte
+​ Africa
+​ Eastern Africa
+​ 226915
+​ 
+​ Mexico
+​ Americas
+​ North America
+​ 128932753
+​ 
+​ Micronesia (Federated States of)
+​ Oceania
+​ Micronesia
+​ 115021
+​ 
+​ Moldova (Republic of)
+​ Europe
+​ Eastern Europe
+​ 2617820
+​ 
+​ Monaco
+​ Europe
+​ Western Europe
+​ 39244
+​ 
+​ Mongolia
+​ Asia
+​ Eastern Asia
+​ 3278292
+​ 
+​ Montenegro
+​ Europe
+​ Southern Europe
+​ 621718
+​ 
+​ Montserrat
+​ Americas
+​ Caribbean
+​ 4922
+​ 
+​ Morocco
+​ Africa
+​ Northern Africa
+​ 36910558
+​ 
+​ Mozambique
+​ Africa
+​ Eastern Africa
+​ 31255435
+​ 
+​ Myanmar
+​ Asia
+​ South-Eastern Asia
+​ 54409794
+​ 
+​ Namibia
+​ Africa
+​ Southern Africa
+​ 2540916
+​ 
+​ Nauru
+​ Oceania
+​ Micronesia
+​ 10834
+​ 
+​ Nepal
+​ Asia
+​ Southern Asia
+​ 29136808
+​ 
+​ Netherlands
+​ Europe
+​ Western Europe
+​ 17441139
+​ 
+​ New Caledonia
+​ Oceania
+​ Melanesia
+​ 271960
+​ 
+​ New Zealand
+​ Oceania
+​ Australia and New Zealand
+​ 5084300
+​ 
+​ Nicaragua
+​ Americas
+​ Central America
+​ 6624554
+​ 
+​ Niger
+​ Africa
+​ Western Africa
+​ 24206636
+​ 
+​ Nigeria
+​ Africa
+​ Western Africa
+​ 206139587
+​ 
+​ Niue
+​ Oceania
+​ Polynesia
+​ 1470
+​ 
+​ Norfolk Island
+​ Oceania
+​ Australia and New Zealand
+​ 2302
+​ 
+​ Korea (Democratic People's Republic of)
+​ Asia
+​ Eastern Asia
+​ 25778815
+​ 
+​ Northern Mariana Islands
+​ Oceania
+​ Micronesia
+​ 57557
+​ 
+​ Norway
+​ Europe
+​ Northern Europe
+​ 5379475
+​ 
+​ Oman
+​ Asia
+​ Western Asia
+​ 5106622
+​ 
+​ Pakistan
+​ Asia
+​ Southern Asia
+​ 220892331
+​ 
+​ Palau
+​ Oceania
+​ Micronesia
+​ 18092
+​ 
+​ Palestine, State of
+​ Asia
+​ Western Asia
+​ 4803269
+​ 
+​ Panama
+​ Americas
+​ Central America
+​ 4314768
+​ 
+​ Papua New Guinea
+​ Oceania
+​ Melanesia
+​ 8947027
+​ 
+​ Paraguay
+​ Americas
+​ South America
+​ 7132530
+​ 
+​ Peru
+​ Americas
+​ South America
+​ 32971846
+​ 
+​ Philippines
+​ Asia
+​ South-Eastern Asia
+​ 109581085
+​ 
+​ Pitcairn
+​ Oceania
+​ Polynesia
+​ 56
+​ 
+​ Poland
+​ Europe
+​ Central Europe
+​ 37950802
+​ 
+​ Portugal
+​ Europe
+​ Southern Europe
+​ 10305564
+​ 
+​ Puerto Rico
+​ Americas
+​ Caribbean
+​ 3194034
+​ 
+​ Qatar
+​ Asia
+​ Western Asia
+​ 2881060
+​ 
+​ Republic of Kosovo
+​ Europe
+​ Eastern Europe
+​ 1775378
+​ 
+​ Réunion
+​ Africa
+​ Eastern Africa
+​ 840974
+​ 
+​ Romania
+​ Europe
+​ Eastern Europe
+​ 19286123
+​ 
+​ Russian Federation
+​ Europe
+​ Eastern Europe
+​ 144104080
+​ 
+​ Rwanda
+​ Africa
+​ Eastern Africa
+​ 12952209
+​ 
+​ Saint Barthélemy
+​ Americas
+​ Caribbean
+​ 9417
+​ 
+​ Saint Helena, Ascension and Tristan da Cunha
+​ Africa
+​ Western Africa
+​ 4255
+​ 
+​ Saint Kitts and Nevis
+​ Americas
+​ Caribbean
+​ 53192
+​ 
+​ Saint Lucia
+​ Americas
+​ Caribbean
+​ 183629
+​ 
+​ Saint Martin (French part)
+​ Americas
+​ Caribbean
+​ 38659
+​ 
+​ Saint Pierre and Miquelon
+​ Americas
+​ Northern America
+​ 6069
+​ 
+​ Saint Vincent and the Grenadines
+​ Americas
+​ Caribbean
+​ 110947
+​ 
+​ Samoa
+​ Oceania
+​ Polynesia
+​ 198410
+​ 
+​ San Marino
+​ Europe
+​ Southern Europe
+​ 33938
+​ 
+​ Sao Tome and Principe
+​ Africa
+​ Middle Africa
+​ 219161
+​ 
+​ Saudi Arabia
+​ Asia
+​ Western Asia
+​ 34813867
+​ 
+​ Senegal
+​ Africa
+​ Western Africa
+​ 16743930
+​ 
+​ Serbia
+​ Europe
+​ Southern Europe
+​ 6908224
+​ 
+​ Seychelles
+​ Africa
+​ Eastern Africa
+​ 98462
+​ 
+​ Sierra Leone
+​ Africa
+​ Western Africa
+​ 7976985
+​ 
+​ Singapore
+​ Asia
+​ South-Eastern Asia
+​ 5685807
+​ 
+​ Sint Maarten (Dutch part)
+​ Americas
+​ Caribbean
+​ 40812
+​ 
+​ Slovakia
+​ Europe
+​ Central Europe
+​ 5458827
+​ 
+​ Slovenia
+​ Europe
+​ Southern Europe
+​ 2100126
+​ 
+​ Solomon Islands
+​ Oceania
+​ Melanesia
+​ 686878
+​ 
+​ Somalia
+​ Africa
+​ Eastern Africa
+​ 15893219
+​ 
+​ South Africa
+​ Africa
+​ Southern Africa
+​ 59308690
+​ 
+​ South Georgia and the South Sandwich Islands
+​ Americas
+​ South America
+​ 30
+​ 
+​ Korea (Republic of)
+​ Asia
+​ Eastern Asia
+​ 51780579
+​ 
+​ Spain
+​ Europe
+​ Southern Europe
+​ 47351567
+​ 
+​ Sri Lanka
+​ Asia
+​ Southern Asia
+​ 21919000
+​ 
+​ Sudan
+​ Africa
+​ Northern Africa
+​ 43849269
+​ 
+​ South Sudan
+​ Africa
+​ Middle Africa
+​ 11193729
+​ 
+​ Suriname
+​ Americas
+​ South America
+​ 586634
+​ 
+​ Svalbard and Jan Mayen
+​ Europe
+​ Northern Europe
+​ 2562
+​ 
+​ Swaziland
+​ Africa
+​ Southern Africa
+​ 1160164
+​ 
+​ Sweden
+​ Europe
+​ Northern Europe
+​ 10353442
+​ 
+​ Switzerland
+​ Europe
+​ Central Europe
+​ 8636896
+​ 
+​ Syrian Arab Republic
+​ Asia
+​ Western Asia
+​ 17500657
+​ 
+​ Taiwan
+​ Asia
+​ Eastern Asia
+​ 23503349
+​ 
+​ Tajikistan
+​ Asia
+​ Central Asia
+​ 9537642
+​ 
+​ Tanzania, United Republic of
+​ Africa
+​ Eastern Africa
+​ 59734213
+​ 
+​ Thailand
+​ Asia
+​ South-Eastern Asia
+​ 69799978
+​ 
+​ Timor-Leste
+​ Asia
+​ South-Eastern Asia
+​ 1318442
+​ 
+​ Togo
+​ Africa
+​ Western Africa
+​ 8278737
+​ 
+​ Tokelau
+​ Oceania
+​ Polynesia
+​ 1411
+​ 
+​ Tonga
+​ Oceania
+​ Polynesia
+​ 105697
+​ 
+​ Trinidad and Tobago
+​ Americas
+​ Caribbean
+​ 1399491
+​ 
+​ Tunisia
+​ Africa
+​ Northern Africa
+​ 11818618
+​ 
+​ Turkey
+​ Asia
+​ Western Asia
+​ 84339067
+​ 
+​ Turkmenistan
+​ Asia
+​ Central Asia
+​ 6031187
+​ 
+​ Turks and Caicos Islands
+​ Americas
+​ Caribbean
+​ 38718
+​ 
+​ Tuvalu
+​ Oceania
+​ Polynesia
+​ 11792
+​ 
+​ Uganda
+​ Africa
+​ Eastern Africa
+​ 45741000
